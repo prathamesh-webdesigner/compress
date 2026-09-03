@@ -41,7 +41,7 @@ See `.env.example` for the full list with comments. Summary:
 | Variable | Public? | Purpose |
 | --- | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | yes | Canonical URL used in metadata, sitemap, JSON-LD |
-| `NEXT_PUBLIC_GA_ID` | yes | Google Analytics 4 Measurement ID (blank = disabled) |
+| `NEXT_PUBLIC_GA_ID` | yes | Google Analytics 4 Measurement ID (defaults to `G-1MX16G6167`) |
 | `NEXT_PUBLIC_ADSENSE_CLIENT_ID` | yes | Google AdSense publisher ID (blank = ads disabled) |
 | `NEXT_PUBLIC_ADSENSE_SLOT_*` | yes | Individual ad slot IDs per placement |
 | `NEXT_PUBLIC_MAX_FILE_SIZE_IMAGE_MB` / `_PDF_MB` | yes | Upload size limits |
@@ -84,7 +84,7 @@ SEO pages for target sizes are just tool entries in `src/config/tools.ts` — se
 
 ## Analytics configuration
 
-Set `NEXT_PUBLIC_GA_ID` to a GA4 Measurement ID. Event tracking helpers live in `src/lib/analytics.ts` (`trackEvent`) and are already wired into the tool components for `tool_opened`, `file_selected`, `compression_started`, `compression_completed`, and `compression_failed` events. No file names, file contents, or PII are ever sent.
+The root layout loads the Google Analytics tag globally using `G-1MX16G6167` by default. Set `NEXT_PUBLIC_GA_ID` to another GA4 Measurement ID, or leave it blank to use the project default. Event tracking helpers live in `src/lib/analytics.ts` (`trackEvent`) and are already wired into the tool components for `tool_opened`, `file_selected`, `compression_started`, `compression_completed`, and `compression_failed` events. No file names, file contents, or PII are ever sent.
 
 ## Sitemap & robots
 
