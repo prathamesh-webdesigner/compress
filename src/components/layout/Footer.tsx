@@ -64,7 +64,8 @@ export function Footer() {
         </div>
         <div className="mt-10 flex flex-col-reverse items-start gap-4 border-t border-[var(--color-border)] pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-[var(--color-text-subtle)]">
-            &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+            &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved. <br />
+            Developed by <Link href="https://nivishdigital.com/" target="_blank" className="text-[var(--color-brand)] hover:underline">Nivish Digital</Link>
           </p>
           <p className="text-xs text-[var(--color-text-subtle)]">
             Image compression runs locally in your browser. PDF compression uses secure, temporary server processing.
