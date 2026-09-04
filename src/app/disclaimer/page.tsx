@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function DisclaimerPage() {
   return (
-    <LegalLayout title="Disclaimer" updated="[Insert publish date]">
+    <LegalLayout title="Disclaimer" updated="04-09-2026">
       <p>
         The tools on {siteConfig.name} are provided for general file compression, conversion and resizing purposes.
         While we aim for accuracy and reliability, we make no guarantees about fitness for any specific purpose.
@@ -25,9 +25,6 @@ export default function DisclaimerPage() {
       <p>
         Nothing on this site constitutes legal, financial, or professional advice. Use of our tools is at your own
         discretion and risk.
-      </p>
-      <p className="text-sm text-[var(--color-text-subtle)]">
-        [This is a template. Replace bracketed placeholders and review with legal counsel before publishing.]
       </p>
     </LegalLayout>
   );

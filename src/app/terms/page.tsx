@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <LegalLayout title="Terms of Service" updated="[Insert publish date]">
+    <LegalLayout title="Terms of Service" updated="04-09-2026">
       <p>By using {siteConfig.name}, you agree to these Terms of Service. Please read them carefully.</p>
 
       <h2>Use of the service</h2>
@@ -48,9 +48,6 @@ export default function TermsPage() {
       <h2>Changes</h2>
       <p>We may update these terms from time to time. Continued use of the service after changes constitutes acceptance of the updated terms.</p>
 
-      <p className="text-sm text-[var(--color-text-subtle)]">
-        [This is a template. Replace bracketed placeholders and review with legal counsel before publishing.]
-      </p>
     </LegalLayout>
   );
 }

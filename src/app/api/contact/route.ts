@@ -3,13 +3,6 @@ import { siteConfig } from "@/config/site";
 
 export const runtime = "nodejs";
 
-// Web3Forms access keys are designed to be used this way — a key only
-// authorizes delivery to the single inbox it was created for, it can't be
-// used to read or redirect mail anywhere else, so a sane default here (kept
-// overridable via env var) is how Web3Forms itself documents embedding it.
-// See: https://web3forms.com
-const DEFAULT_WEB3FORMS_ACCESS_KEY = "72e5c470-e4bf-44e7-aa32-c162163ed4d2";
-
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -37,7 +30,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Message is too long." }, { status: 400 });
     }
 
-    const web3formsAccessKey = process.env.WEB3FORMS_ACCESS_KEY || DEFAULT_WEB3FORMS_ACCESS_KEY;
+    const web3formsAccessKey = process.env.WEB3FORMS_ACCESS_KEY;
     const resendApiKey = process.env.RESEND_API_KEY;
 
     if (web3formsAccessKey) {
@@ -83,9 +76,8 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ error: "We couldn't send your message right now. Please try again shortly." }, { status: 502 });
       }
     } else {
-      // No email provider configured — log server-side so the message isn't lost silently.
-      // Set WEB3FORMS_ACCESS_KEY or RESEND_API_KEY to deliver messages by email.
-      console.log("Contact form submission (no email provider configured):", { name, email, subject, message });
+      console.error("Contact email is not configured. Set WEB3FORMS_ACCESS_KEY or RESEND_API_KEY.");
+      return NextResponse.json({ error: "Email delivery is not configured yet. Please try again later." }, { status: 503 });
     }
 
     return NextResponse.json({ ok: true });

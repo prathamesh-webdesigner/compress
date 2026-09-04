@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "SizeSnap",
+  name: "CompNivi",
   tagline: "Compress Files to the Size You Need",
   description:
     "Free online tools to compress images and PDFs to a specific KB or MB size. Reduce file size while preserving the best possible quality.",

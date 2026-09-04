@@ -54,7 +54,7 @@ See `.env.example` for the full list with comments. Summary:
 
 ### Contact form email delivery
 
-`/api/contact` sends real email out of the box via [Web3Forms](https://web3forms.com), using an access key already wired into `src/app/api/contact/route.ts` that's bound to `thakurpratham15@gmail.com` — no setup required. To route mail elsewhere, either:
+`/api/contact` sends real email via [Web3Forms](https://web3forms.com) when `WEB3FORMS_ACCESS_KEY` is configured in your hosting provider. To configure delivery, either:
 
 - Get your own free Web3Forms access key (instant, no signup — just enter an email at web3forms.com) and set `WEB3FORMS_ACCESS_KEY`, or
 - Set `RESEND_API_KEY` instead (used only when `WEB3FORMS_ACCESS_KEY` is not set) and update `CONTACT_EMAIL` to the destination address.

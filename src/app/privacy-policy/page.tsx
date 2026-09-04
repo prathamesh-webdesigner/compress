@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <LegalLayout title="Privacy Policy" updated="[Insert publish date]">
+    <LegalLayout title="Privacy Policy" updated="04-09-2026">
       <p>
         This Privacy Policy explains how {siteConfig.name} (&quot;we&quot;, &quot;us&quot;) handles information when you use our
         website and tools.
@@ -65,9 +65,7 @@ export default function PrivacyPolicyPage() {
       <h2>Changes to this policy</h2>
       <p>We may update this policy from time to time. Material changes will be reflected by updating the date at the top of this page.</p>
 
-      <p className="text-sm text-[var(--color-text-subtle)]">
-        [This is a template policy. Replace bracketed placeholders and review with legal counsel before publishing.]
-      </p>
+      
     </LegalLayout>
   );
 }
