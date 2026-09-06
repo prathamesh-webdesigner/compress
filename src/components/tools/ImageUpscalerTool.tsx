@@ -110,7 +110,7 @@ export function ImageUpscalerTool({ tool }: { tool: Tool }) {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-start gap-2.5 rounded-xl bg-[var(--color-brand-soft)] p-3 text-xs text-[var(--color-text-muted)]">
+      <div className="flex items-start gap-2.5 rounded-xl bg-[var(--color-brand-soft)] p-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
         <Info size={16} className="mt-0.5 shrink-0 text-[var(--color-brand)]" />
         <p>
           This upscaler uses multi-step high-quality resampling plus edge sharpening — a genuine, well-tuned classical
@@ -158,7 +158,7 @@ export function ImageUpscalerTool({ tool }: { tool: Tool }) {
               </button>
             </div>
           </div>
-          <p className="text-xs text-[var(--color-text-subtle)]">
+          <p className="text-sm leading-relaxed text-[var(--color-text-subtle)]">
             {dimensions && `Original: ${dimensions.width}×${dimensions.height}px → Target: ${targetLabel}px. `}
             Processed entirely in your browser — never uploaded to our servers.
           </p>

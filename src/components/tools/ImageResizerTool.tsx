@@ -135,7 +135,7 @@ export function ImageResizerTool({ tool }: { tool: Tool }) {
             </div>
           )}
 
-          <p className="text-xs text-[var(--color-text-subtle)]">Your file is processed in your browser and is not uploaded to our servers.</p>
+          <p className="text-sm leading-relaxed text-[var(--color-text-subtle)]">Your file is processed in your browser and is not uploaded to our servers.</p>
           <button onClick={handleResize} className="btn-primary w-full px-5 py-3 text-sm sm:w-auto">Resize Image</button>
         </div>
       )}

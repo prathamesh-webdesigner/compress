@@ -40,7 +40,7 @@ export default function HowItWorksPage() {
                 <step.icon size={20} />
               </span>
               <h2 className="relative mt-4 font-semibold text-[var(--color-text)]">{step.title}</h2>
-              <p className="relative mt-1.5 text-sm leading-relaxed text-[var(--color-text-muted)]">{step.body}</p>
+              <p className="relative mt-1.5 text-[15px] leading-relaxed text-[var(--color-text-muted)]">{step.body}</p>
             </div>
           ))}
         </div>
@@ -48,7 +48,7 @@ export default function HowItWorksPage() {
         <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2">
           <div className="card p-6">
             <h2 className="text-lg font-bold text-[var(--color-text)]">The image compression algorithm</h2>
-            <p className="mt-2.5 text-sm leading-relaxed text-[var(--color-text-muted)]">
+            <p className="mt-2.5 text-[15px] leading-relaxed text-[var(--color-text-muted)]">
               For target-size tools, the compressor first tries adjusting JPEG or WebP quality using a binary search: it
               repeatedly tests quality settings to find the highest one whose output size is at or below your target.
               Only if quality reduction alone can&apos;t reach the target does it reduce the image&apos;s pixel
@@ -59,7 +59,7 @@ export default function HowItWorksPage() {
           </div>
           <div className="card p-6">
             <h2 className="text-lg font-bold text-[var(--color-text)]">The PDF compression approach</h2>
-            <p className="mt-2.5 text-sm leading-relaxed text-[var(--color-text-muted)]">
+            <p className="mt-2.5 text-[15px] leading-relaxed text-[var(--color-text-muted)]">
               For PDFs, size is driven almost entirely by embedded images. The compressor extracts each embedded image,
               recompresses it using the same quality-search approach (bounded by whichever compression level you
               choose), and rebuilds the PDF with a more compact internal structure. Unnecessary metadata is stripped
@@ -68,7 +68,7 @@ export default function HowItWorksPage() {
           </div>
           <div className="card p-6">
             <h2 className="text-lg font-bold text-[var(--color-text)]">The image upscaler</h2>
-            <p className="mt-2.5 text-sm leading-relaxed text-[var(--color-text-muted)]">
+            <p className="mt-2.5 text-[15px] leading-relaxed text-[var(--color-text-muted)]">
               The 4K Image Upscaler enlarges images in repeated 2x steps using high-quality resampling, then applies a
               sharpening pass to counteract the softness scaling introduces. It is a classical algorithm, not a
               generative AI model — it enhances existing detail rather than inventing new detail.

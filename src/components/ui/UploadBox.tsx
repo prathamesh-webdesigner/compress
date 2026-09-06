@@ -68,16 +68,16 @@ export function UploadBox({
         <p className="mt-4 text-base font-semibold text-[var(--color-text)]">
           Drag &amp; drop your {multiple ? "files" : "file"} here
         </p>
-        <p className="mt-1 text-sm text-[var(--color-text-muted)]">or tap to browse from your device</p>
-        <p className="mt-4 text-xs text-[var(--color-text-subtle)]">
+        <p className="mt-1 text-base text-[var(--color-text-muted)]">or tap to browse from your device</p>
+        <p className="mt-4 text-sm text-[var(--color-text-subtle)]">
           Supports {accept.join(", ")} &middot; Max {maxFileSizeMB} MB {multiple ? "per file" : ""}
         </p>
         {multiple && maxFiles && (
-          <p className="mt-1 text-xs font-medium text-[var(--color-brand)]">
+          <p className="mt-1 text-sm font-medium text-[var(--color-brand)]">
             {batchNote || `Upload up to ${maxFiles} files at once.`}
           </p>
         )}
-        {helpText && <p className="mt-1 text-xs text-[var(--color-text-subtle)]">{helpText}</p>}
+        {helpText && <p className="mt-1 text-sm text-[var(--color-text-subtle)]">{helpText}</p>}
         <input
           ref={inputRef}
           id={inputId}

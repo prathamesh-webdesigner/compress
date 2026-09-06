@@ -62,7 +62,7 @@ export function ToolCard({
             style={{ color: toneStyle.fg }}
           />
         </span>
-        {description && <p className="mt-1.5 text-sm leading-relaxed text-[var(--color-text-muted)]">{description}</p>}
+        {description && <p className="mt-1.5 text-[15px] leading-relaxed text-[var(--color-text-muted)]">{description}</p>}
       </div>
     </Link>
   );

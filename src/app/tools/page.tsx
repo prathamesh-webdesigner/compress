@@ -11,5 +11,5 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default function AllToolsPage() {
-  return <CategoryPage title="All Tools" intro="Every free SizeSnap tool in one place." tools={tools} />;
+  return <CategoryPage title="All Tools" intro="Every free CompNivi tool in one place." tools={tools} />;
 }

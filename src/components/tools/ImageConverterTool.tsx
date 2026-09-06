@@ -88,7 +88,7 @@ export function ImageConverterTool({ tool }: { tool: Tool }) {
       {file && !result && !isRunning && (
         <div className="card space-y-5 p-5 sm:p-6">
           <FilePreview fileName={file.name} fileType={file.type} fileSize={file.size} previewUrl={previewUrl} onRemove={reset} />
-          <p className="text-xs text-[var(--color-text-subtle)]">Your file is processed in your browser and is not uploaded to our servers.</p>
+          <p className="text-sm leading-relaxed text-[var(--color-text-subtle)]">Your file is processed in your browser and is not uploaded to our servers.</p>
           <button onClick={handleConvert} className="btn-primary w-full px-5 py-3 text-sm sm:w-auto">
             Convert to {tool.outputFormat?.toUpperCase()}
           </button>

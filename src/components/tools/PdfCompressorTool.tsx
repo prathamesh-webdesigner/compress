@@ -199,13 +199,13 @@ export function PdfCompressorTool({ tool }: { tool: Tool }) {
               ))}
             </div>
             {level === "quality" && (
-              <p className="mt-2 text-xs text-[var(--color-text-subtle)]">
+              <p className="mt-2 text-sm leading-relaxed text-[var(--color-text-subtle)]">
                 On Maximum Quality, the target size is treated as a goal, not a hard limit — we never drop below a
                 quality floor just to hit the number.
               </p>
             )}
           </div>
-          <p className="text-xs text-[var(--color-text-subtle)]">
+          <p className="text-sm leading-relaxed text-[var(--color-text-subtle)]">
             PDF compression requires secure server-side processing. Each file is held only in temporary memory during compression and is automatically
             discarded immediately afterward — never stored or shared.
             {items.length > 1 && " All files share the target size above and download together as one ZIP when done."}

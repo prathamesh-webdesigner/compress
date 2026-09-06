@@ -14,7 +14,7 @@ export function FAQ({ items }: { items: ToolFaqItem[] }) {
               <span>{item.q}</span>
               <span className="shrink-0 text-[var(--color-text-subtle)] transition-transform group-open:rotate-45 text-xl leading-none">+</span>
             </summary>
-            <p className="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">{item.a}</p>
+            <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-text-muted)]">{item.a}</p>
           </details>
         ))}
       </div>

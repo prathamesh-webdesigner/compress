@@ -94,7 +94,7 @@ export function CategoryPage({
         <div className="mt-12 card flex flex-col items-start justify-between gap-4 bg-gradient-to-br from-[var(--color-brand-soft)] to-[var(--color-surface)] p-6 sm:flex-row sm:items-center">
           <div>
             <h2 className="text-lg font-bold text-[var(--color-text)]">Not sure which tool you need?</h2>
-            <p className="mt-1 text-sm text-[var(--color-text-muted)]">Browse every tool on SizeSnap in one place, organized by what you&apos;re trying to do.</p>
+            <p className="mt-1 text-[15px] leading-relaxed text-[var(--color-text-muted)]">Browse every tool on CompNivi in one place, organized by what you&apos;re trying to do.</p>
           </div>
           <Link href="/tools" className="btn-primary flex shrink-0 items-center gap-2 px-5 py-2.5 text-sm">
             View all tools <ArrowRight size={15} />

@@ -12,7 +12,7 @@ export const siteConfig = {
   maxImageFileSizeMB: Number(process.env.NEXT_PUBLIC_MAX_FILE_SIZE_IMAGE_MB || 20),
   maxPdfFileSizeMB: Number(process.env.NEXT_PUBLIC_MAX_FILE_SIZE_PDF_MB || 20),
   maxBatchFiles: Number(process.env.NEXT_PUBLIC_MAX_BATCH_FILES || 10),
-  twitterHandle: "@sizesnap",
+  twitterHandle: "@compnivi",
 } as const;
 
 export function pageMetadata({

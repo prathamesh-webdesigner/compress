@@ -1,4 +1,4 @@
-# SizeSnap
+# CompNivi
 
 Free, browser-first tools to compress and convert images and PDFs to an exact KB or MB size. Built with Next.js (App Router), React, TypeScript and Tailwind CSS.
 

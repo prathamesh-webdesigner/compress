@@ -89,7 +89,7 @@ export function ResultCard({
       </dl>
 
       {(formatNote || dimensionsNote) && (
-        <div className="mt-4 space-y-1 rounded-xl bg-[var(--color-surface-muted)] p-3 text-xs text-[var(--color-text-muted)]">
+        <div className="mt-4 space-y-1 rounded-xl bg-[var(--color-surface-muted)] p-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
           {formatNote && <p>{formatNote}</p>}
           {dimensionsNote && <p>{dimensionsNote}</p>}
         </div>

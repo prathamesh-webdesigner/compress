@@ -37,7 +37,7 @@ function imgTool(
     allowCustomTarget: true,
     maxFileSizeMB: 20,
     clientSideOnly: true,
-    seoTitle: `${overrides.title} Online Free | SizeSnap`,
+    seoTitle: `${overrides.title} Online Free | CompNivi`,
     metaDescription: `${overrides.title.replace(" Online", "")} for free in your browser. Fast, private, no upload required. Preview before you download.`,
     intro: buildImageIntro(input),
     contentSections: buildImageContentSections(input),
@@ -190,7 +190,7 @@ export const tools: Tool[] = [
     allowCustomTarget: false,
     maxFileSizeMB: 20,
     clientSideOnly: true,
-    seoTitle: "Compress Image Without Losing Quality | SizeSnap",
+    seoTitle: "Compress Image Without Losing Quality | CompNivi",
     metaDescription:
       "Shrink JPG, PNG and WebP images with high-quality encoding — no target size, no forced resizing, no visible quality loss.",
     intro:
@@ -238,7 +238,7 @@ export const tools: Tool[] = [
     allowCustomTarget: true,
     maxFileSizeMB: 20,
     clientSideOnly: true,
-    seoTitle: "Compress Image to Custom Size (KB or MB) | SizeSnap",
+    seoTitle: "Compress Image to Custom Size (KB or MB) | CompNivi",
     metaDescription:
       "Enter any target size in KB or MB and compress your image to fit. Free, private, browser-based compression with instant preview.",
     intro:
@@ -295,7 +295,7 @@ export const tools: Tool[] = [
       allowCustomTarget: true,
       maxFileSizeMB: 20,
       clientSideOnly: false,
-      seoTitle: `Compress PDF to ${label} Online Free | SizeSnap`,
+      seoTitle: `Compress PDF to ${label} Online Free | CompNivi`,
       metaDescription: `Shrink your PDF to ${label} or less. Images are recompressed and unnecessary data is stripped while text and layout stay intact.`,
       intro: `Reduce your PDF to ${label} or less while keeping it fully usable — readable text, intact layout, and optimized embedded images. This is commonly needed for ${use}. Your file is processed securely and deleted automatically after compression.`,
       contentSections: [
@@ -341,7 +341,7 @@ export const tools: Tool[] = [
     allowCustomTarget: true,
     maxFileSizeMB: 20,
     clientSideOnly: false,
-    seoTitle: "Compress PDF to Custom Size (KB or MB) | SizeSnap",
+    seoTitle: "Compress PDF to Custom Size (KB or MB) | CompNivi",
     metaDescription: "Enter any target size and compress your PDF to fit. Images are optimized and unnecessary data removed while layout and text stay intact.",
     intro: "Set the exact KB or MB limit your form, portal or email requires and compress your PDF to match. Useful when the limit doesn't line up with a round preset.",
     contentSections: [
@@ -370,7 +370,7 @@ export const tools: Tool[] = [
     allowCustomTarget: false,
     maxFileSizeMB: 20,
     clientSideOnly: true,
-    seoTitle: "Free Online Image Resizer | SizeSnap",
+    seoTitle: "Free Online Image Resizer | CompNivi",
     metaDescription: "Resize any image to exact pixel dimensions or a percentage scale, free and entirely in your browser.",
     intro: "Resize your image by exact pixel width and height, or by a percentage scale. Great for meeting dimension requirements before or after compressing to a target file size.",
     contentSections: [
@@ -398,7 +398,7 @@ export const tools: Tool[] = [
     allowCustomTarget: false,
     maxFileSizeMB: 20,
     clientSideOnly: true,
-    seoTitle: "Resize Image to Custom Dimensions (Exact Pixels) | SizeSnap",
+    seoTitle: "Resize Image to Custom Dimensions (Exact Pixels) | CompNivi",
     metaDescription: "Type an exact width and height in pixels and resize any image to those precise dimensions for free.",
     intro: "Enter an exact width and height in pixels — for example 800x600 or 1080x1080 — and get your image resized to precisely those dimensions, with an option to preserve aspect ratio via smart cropping.",
     contentSections: [
@@ -424,7 +424,7 @@ export const tools: Tool[] = [
     allowCustomTarget: false,
     maxFileSizeMB: 20,
     clientSideOnly: true,
-    seoTitle: "Convert JPG to PNG Online Free | SizeSnap",
+    seoTitle: "Convert JPG to PNG Online Free | CompNivi",
     metaDescription: "Convert JPG images to PNG format for free, in your browser, with no quality loss from the conversion itself.",
     intro: "Convert a JPG image to PNG format. PNG uses lossless compression, so this is useful when you need a format that supports transparency or want to avoid further JPEG artifacting in future edits.",
     contentSections: [
@@ -450,7 +450,7 @@ export const tools: Tool[] = [
     allowCustomTarget: false,
     maxFileSizeMB: 20,
     clientSideOnly: true,
-    seoTitle: "Convert PNG to JPG Online Free | SizeSnap",
+    seoTitle: "Convert PNG to JPG Online Free | CompNivi",
     metaDescription: "Convert PNG images to JPG for a much smaller file size, free and entirely in your browser.",
     intro: "Convert a PNG image to JPG format, typically shrinking the file size significantly. Transparent areas are filled with white since JPG doesn't support transparency.",
     contentSections: [
@@ -476,7 +476,7 @@ export const tools: Tool[] = [
     allowCustomTarget: false,
     maxFileSizeMB: 20,
     clientSideOnly: true,
-    seoTitle: "Convert WebP to JPG Online Free | SizeSnap",
+    seoTitle: "Convert WebP to JPG Online Free | CompNivi",
     metaDescription: "Convert WebP images to the more widely supported JPG format, free and in your browser.",
     intro: "Convert a WebP image to JPG for compatibility with older software, email clients and platforms that don't fully support WebP.",
     contentSections: [
@@ -502,7 +502,7 @@ export const tools: Tool[] = [
     allowCustomTarget: false,
     maxFileSizeMB: 20,
     clientSideOnly: true,
-    seoTitle: "Convert JPG to WebP Online Free | SizeSnap",
+    seoTitle: "Convert JPG to WebP Online Free | CompNivi",
     metaDescription: "Convert JPG images to the modern, smaller WebP format for free, entirely in your browser.",
     intro: "Convert a JPG image to WebP, which typically produces 25-35% smaller files than JPG at equivalent visual quality — ideal for faster-loading websites.",
     contentSections: [
@@ -528,7 +528,7 @@ export const tools: Tool[] = [
     allowCustomTarget: false,
     maxFileSizeMB: 20,
     clientSideOnly: true,
-    seoTitle: "Convert PNG to WebP Online Free | SizeSnap",
+    seoTitle: "Convert PNG to WebP Online Free | CompNivi",
     metaDescription: "Convert PNG images to WebP for smaller files that still support transparency, free and in your browser.",
     intro: "Convert a PNG to WebP and keep transparency support while getting a noticeably smaller file than PNG typically produces.",
     contentSections: [
@@ -554,7 +554,7 @@ export const tools: Tool[] = [
     allowCustomTarget: false,
     maxFileSizeMB: 20,
     clientSideOnly: true,
-    seoTitle: "Convert Image to PDF Online Free | SizeSnap",
+    seoTitle: "Convert Image to PDF Online Free | CompNivi",
     metaDescription: "Combine one or more JPG, PNG or WebP images into a single PDF file, free and in your browser.",
     intro: "Turn one or more images into a single PDF document — each image becomes its own page, in the order you upload them. Works with JPG, PNG and WebP.",
     contentSections: [
@@ -580,7 +580,7 @@ export const tools: Tool[] = [
     allowCustomTarget: false,
     maxFileSizeMB: 20,
     clientSideOnly: true,
-    seoTitle: "Convert JPG to PDF Online Free | SizeSnap",
+    seoTitle: "Convert JPG to PDF Online Free | CompNivi",
     metaDescription: "Convert one or more JPG photos into a single PDF document, free and in your browser.",
     intro: "Convert your JPG photos into a single PDF document, one page per image, in the order you add them.",
     contentSections: [
@@ -605,7 +605,7 @@ export const tools: Tool[] = [
     allowCustomTarget: false,
     maxFileSizeMB: 20,
     clientSideOnly: true,
-    seoTitle: "Convert PNG to PDF Online Free | SizeSnap",
+    seoTitle: "Convert PNG to PDF Online Free | CompNivi",
     metaDescription: "Convert one or more PNG images into a single PDF document, free and in your browser.",
     intro: "Convert PNG images into a single PDF document, one page per image, preserving transparency as a white background where needed.",
     contentSections: [
@@ -632,7 +632,7 @@ export const tools: Tool[] = [
     allowCustomTarget: false,
     maxFileSizeMB: 15,
     clientSideOnly: true,
-    seoTitle: "Free 4K Image Upscaler Online | SizeSnap",
+    seoTitle: "Free 4K Image Upscaler Online | CompNivi",
     metaDescription:
       "Enlarge a low-resolution JPG, PNG or WebP image up to 2x or toward 4K (3840x2160) using multi-step high-quality resampling and sharpening, free in your browser.",
     intro:
@@ -678,7 +678,7 @@ export const tools: Tool[] = [
     allowCustomTarget: false,
     maxFileSizeMB: 10,
     clientSideOnly: true,
-    seoTitle: "Signature Image Resizer Online Free | SizeSnap",
+    seoTitle: "Signature Image Resizer Online Free | CompNivi",
     metaDescription: "Resize a scanned or photographed signature to the exact pixel dimensions your form requires, free and in your browser.",
     intro: "Resize a scanned or photographed signature to exact pixel dimensions commonly required by bank forms, exam portals and job applications (for example 140x60 px).",
     contentSections: [
@@ -706,7 +706,7 @@ export const tools: Tool[] = [
     allowCustomTarget: true,
     maxFileSizeMB: 10,
     clientSideOnly: true,
-    seoTitle: "Compress Signature to 20 KB Online Free | SizeSnap",
+    seoTitle: "Compress Signature to 20 KB Online Free | CompNivi",
     metaDescription: "Compress a scanned signature image to 20 KB or less for bank, exam and job application forms — free and private.",
     intro: "Compress a signature image to 20 KB or less — a common requirement for bank account forms, government exam applications and job portals. Because signatures are simple, high-contrast images, they compress cleanly even at very small sizes.",
     contentSections: [
@@ -734,7 +734,7 @@ export const tools: Tool[] = [
     allowCustomTarget: true,
     maxFileSizeMB: 10,
     clientSideOnly: true,
-    seoTitle: "Compress Signature to 50 KB Online Free | SizeSnap",
+    seoTitle: "Compress Signature to 50 KB Online Free | CompNivi",
     metaDescription: "Compress a scanned signature image to 50 KB or less for forms and portals that accept a slightly larger file — free and private.",
     intro: "Compress a signature image to 50 KB or less, the size some portals allow when 20 KB is too restrictive for a higher-resolution scan.",
     contentSections: [
@@ -759,7 +759,7 @@ export const tools: Tool[] = [
     allowCustomTarget: false,
     maxFileSizeMB: 20,
     clientSideOnly: true,
-    seoTitle: "Passport Photo Resizer Online Free | SizeSnap",
+    seoTitle: "Passport Photo Resizer Online Free | CompNivi",
     metaDescription: "Resize a photo to common passport and visa photo dimensions, free and in your browser.",
     intro: "Resize a photo to common passport and ID photo dimensions, such as 2x2 inches (600x600 px at 300 DPI) for US passports or 51x51 mm for many other countries. Always confirm your destination country's exact current specification before submitting.",
     contentSections: [
@@ -787,7 +787,7 @@ export const tools: Tool[] = [
     allowCustomTarget: true,
     maxFileSizeMB: 20,
     clientSideOnly: true,
-    seoTitle: "Compress Passport Photo to 50 KB Online Free | SizeSnap",
+    seoTitle: "Compress Passport Photo to 50 KB Online Free | CompNivi",
     metaDescription: "Compress a passport or ID photo to 50 KB or less while keeping facial detail as clear as possible — free and private.",
     intro: "Compress a passport or ID photo to 50 KB or less, a common limit on visa and government portals. Facial photos need to stay clear enough for identification, so the compressor prioritizes keeping detail in the face.",
     contentSections: [
@@ -815,7 +815,7 @@ export const tools: Tool[] = [
     allowCustomTarget: true,
     maxFileSizeMB: 20,
     clientSideOnly: true,
-    seoTitle: "Compress Passport Photo to 100 KB Online Free | SizeSnap",
+    seoTitle: "Compress Passport Photo to 100 KB Online Free | CompNivi",
     metaDescription: "Compress a passport or ID photo to 100 KB or less with minimal visible quality loss — free and private.",
     intro: "Compress a passport or ID photo to 100 KB or less. This is a more generous limit than 50 KB, so quality loss is typically minimal even for high-resolution originals.",
     contentSections: [

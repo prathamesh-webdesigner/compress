@@ -143,7 +143,7 @@ export function SmartImageCompressorTool({ tool }: { tool: Tool }) {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-start gap-2.5 rounded-xl bg-[var(--color-success-soft)] p-3 text-xs text-[var(--color-text-muted)]">
+      <div className="flex items-start gap-2.5 rounded-xl bg-[var(--color-success-soft)] p-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
         <ShieldCheck size={16} className="mt-0.5 shrink-0 text-[var(--color-success)]" />
         <p>
           This tool never resizes your image and never forces a target file size. It re-encodes at a high-quality
@@ -181,7 +181,7 @@ export function SmartImageCompressorTool({ tool }: { tool: Tool }) {
               />
             ))}
           </div>
-          <p className="text-xs text-[var(--color-text-subtle)]">Your files are processed in your browser and are never uploaded to our servers.</p>
+          <p className="text-sm leading-relaxed text-[var(--color-text-subtle)]">Your files are processed in your browser and are never uploaded to our servers.</p>
           <button onClick={handleCompressAll} className="btn-primary w-full px-5 py-3 text-sm sm:w-auto">
             Compress {items.length > 1 ? `${items.length} Files` : "File"}
           </button>

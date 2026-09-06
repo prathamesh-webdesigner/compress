@@ -140,7 +140,7 @@ export function ImageToPdfTool({ tool }: { tool: Tool }) {
               </div>
             ))}
           </div>
-          <p className="text-xs text-[var(--color-text-subtle)]">Your files are processed in your browser and are not uploaded to our servers.</p>
+          <p className="text-sm leading-relaxed text-[var(--color-text-subtle)]">Your files are processed in your browser and are not uploaded to our servers.</p>
           {!isRunning && (
             <button onClick={handleConvert} className="btn-primary w-full px-5 py-3 text-sm sm:w-auto">
               Create PDF

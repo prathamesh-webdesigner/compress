@@ -66,7 +66,7 @@ const ENHANCE = ["image-upscaler-4k", "image-resizer", "resize-image-to-custom-d
 
 const HOME_FAQ = [
   {
-    q: "Is SizeSnap really free?",
+    q: "Is CompNivi really free?",
     a: "Yes. Every tool is free to use with no account, no watermark and no artificial limits designed to push you toward a paid plan. The site may show ads to cover hosting costs.",
   },
   {
@@ -215,7 +215,7 @@ export default function Home() {
                 </span>
                 <span className="mt-3 text-xs font-semibold text-[var(--color-text-subtle)]">STEP {i + 1}</span>
                 <h3 className="mt-1 font-semibold text-[var(--color-text)]">{step.title}</h3>
-                <p className="mt-1.5 max-w-xs text-sm text-[var(--color-text-muted)]">{step.body}</p>
+                <p className="mt-1.5 max-w-xs text-[15px] leading-relaxed text-[var(--color-text-muted)]">{step.body}</p>
               </div>
             ))}
           </div>
@@ -226,16 +226,16 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Why SizeSnap */}
+        {/* Why CompNivi */}
         <section>
-          <h2 className="text-lg font-bold text-[var(--color-text)]">Why SizeSnap</h2>
+          <h2 className="text-lg font-bold text-[var(--color-text)]">Why CompNivi</h2>
           <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
             <div className="card p-5 transition-shadow hover:shadow-md">
               <span className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "#eff6ff", color: "#2563eb" }}>
                 <ImageIcon size={20} />
               </span>
               <h3 className="mt-3 font-semibold text-[var(--color-text)]">Precise size targeting</h3>
-              <p className="mt-1.5 text-sm text-[var(--color-text-muted)]">
+              <p className="mt-1.5 text-[15px] leading-relaxed text-[var(--color-text-muted)]">
                 Tell us the exact KB or MB you need and we find the highest quality that fits — not just a generic &quot;compress&quot; button.
               </p>
             </div>
@@ -244,7 +244,7 @@ export default function Home() {
                 <FileText size={20} />
               </span>
               <h3 className="mt-3 font-semibold text-[var(--color-text)]">Images and PDFs</h3>
-              <p className="mt-1.5 text-sm text-[var(--color-text-muted)]">
+              <p className="mt-1.5 text-[15px] leading-relaxed text-[var(--color-text-muted)]">
                 One place for the file compression tasks that come up again and again — forms, portals, email attachments and more.
               </p>
             </div>
@@ -253,7 +253,7 @@ export default function Home() {
                 <RefreshCw size={20} />
               </span>
               <h3 className="mt-3 font-semibold text-[var(--color-text)]">Convert and resize too</h3>
-              <p className="mt-1.5 text-sm text-[var(--color-text-muted)]">
+              <p className="mt-1.5 text-[15px] leading-relaxed text-[var(--color-text-muted)]">
                 Switch formats, resize to exact dimensions, or combine images into a PDF — all in the same fast, free toolkit.
               </p>
             </div>
@@ -262,7 +262,7 @@ export default function Home() {
                 <Layers size={20} />
               </span>
               <h3 className="mt-3 font-semibold text-[var(--color-text)]">Batch, then ZIP</h3>
-              <p className="mt-1.5 text-sm text-[var(--color-text-muted)]">
+              <p className="mt-1.5 text-[15px] leading-relaxed text-[var(--color-text-muted)]">
                 Compress up to {siteConfig.maxBatchFiles} files in one go and download everything together as a single ZIP.
               </p>
             </div>
@@ -271,7 +271,7 @@ export default function Home() {
                 <Lock size={20} />
               </span>
               <h3 className="mt-3 font-semibold text-[var(--color-text)]">Private by default</h3>
-              <p className="mt-1.5 text-sm text-[var(--color-text-muted)]">
+              <p className="mt-1.5 text-[15px] leading-relaxed text-[var(--color-text-muted)]">
                 Image compression happens entirely in your browser. Your files are never uploaded for these tools.
               </p>
             </div>
@@ -280,7 +280,7 @@ export default function Home() {
                 <Gauge size={20} />
               </span>
               <h3 className="mt-3 font-semibold text-[var(--color-text)]">Built for speed</h3>
-              <p className="mt-1.5 text-sm text-[var(--color-text-muted)]">
+              <p className="mt-1.5 text-[15px] leading-relaxed text-[var(--color-text-muted)]">
                 A Web Worker keeps compression off the main thread, so the page stays responsive even on large files.
               </p>
             </div>
@@ -295,7 +295,7 @@ export default function Home() {
             </span>
             <div>
               <h3 className="font-semibold text-[var(--color-text)]">Need a passport photo or signature resized?</h3>
-              <p className="text-sm text-[var(--color-text-muted)]">Purpose-built tools for common form and application requirements.</p>
+              <p className="text-[15px] leading-relaxed text-[var(--color-text-muted)]">Purpose-built tools for common form and application requirements.</p>
             </div>
           </div>
           <Link href="/application-tools" className="btn-primary shrink-0 px-5 py-2.5 text-sm">
@@ -310,8 +310,8 @@ export default function Home() {
               <ShieldCheck size={13} /> Privacy &amp; security
             </span>
             <h2 className="mt-3 text-2xl font-bold text-[var(--color-text)]">Your files stay yours</h2>
-            <p className="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">
-              We designed SizeSnap around a simple rule: don&apos;t touch a server unless the task genuinely requires it.
+            <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-text-muted)]">
+              We designed CompNivi around a simple rule: don&apos;t touch a server unless the task genuinely requires it.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -319,25 +319,25 @@ export default function Home() {
               <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[var(--color-brand-soft)] text-[var(--color-brand)]">
                 <Lock size={15} />
               </span>
-              <p className="text-sm text-[var(--color-text-muted)]"><strong className="text-[var(--color-text)]">Image tools:</strong> compression, resizing, conversion and the 4K upscaler all run locally in your browser via the Canvas API. Nothing is uploaded.</p>
+              <p className="text-[15px] leading-relaxed text-[var(--color-text-muted)]"><strong className="text-[var(--color-text)]">Image tools:</strong> compression, resizing, conversion and the 4K upscaler all run locally in your browser via the Canvas API. Nothing is uploaded.</p>
             </div>
             <div className="flex items-start gap-3">
               <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[var(--color-danger-soft)] text-[var(--color-danger)]">
                 <FileText size={15} />
               </span>
-              <p className="text-sm text-[var(--color-text-muted)]"><strong className="text-[var(--color-text)]">PDF tools:</strong> processed temporarily on our server (browsers can&apos;t recompress embedded PDF images), then deleted immediately after your file is returned.</p>
+              <p className="text-[15px] leading-relaxed text-[var(--color-text-muted)]"><strong className="text-[var(--color-text)]">PDF tools:</strong> processed temporarily on our server (browsers can&apos;t recompress embedded PDF images), then deleted immediately after your file is returned.</p>
             </div>
             <div className="flex items-start gap-3">
               <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[var(--color-success-soft)] text-[var(--color-success)]">
                 <ShieldCheck size={15} />
               </span>
-              <p className="text-sm text-[var(--color-text-muted)]"><strong className="text-[var(--color-text)]">No accounts:</strong> nothing to sign up for, no file history stored, no tracking beyond basic anonymous analytics.</p>
+              <p className="text-[15px] leading-relaxed text-[var(--color-text-muted)]"><strong className="text-[var(--color-text)]">No accounts:</strong> nothing to sign up for, no file history stored, no tracking beyond basic anonymous analytics.</p>
             </div>
             <div className="flex items-start gap-3">
               <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[var(--color-warning-soft)] text-[var(--color-warning)]">
                 <Gauge size={15} />
               </span>
-              <p className="text-sm text-[var(--color-text-muted)]"><strong className="text-[var(--color-text)]">Full details:</strong> read exactly what happens to your data in our <Link href="/privacy-policy" className="font-medium text-[var(--color-brand)] hover:underline">Privacy Policy</Link>.</p>
+              <p className="text-[15px] leading-relaxed text-[var(--color-text-muted)]"><strong className="text-[var(--color-text)]">Full details:</strong> read exactly what happens to your data in our <Link href="/privacy-policy" className="font-medium text-[var(--color-brand)] hover:underline">Privacy Policy</Link>.</p>
             </div>
           </div>
         </section>

@@ -50,7 +50,7 @@ export default function AboutPage() {
                 <v.icon size={18} />
               </span>
               <h2 className="mt-3 font-semibold text-[var(--color-text)]">{v.title}</h2>
-              <p className="mt-1.5 text-sm leading-relaxed text-[var(--color-text-muted)]">{v.body}</p>
+              <p className="mt-1.5 text-[15px] leading-relaxed text-[var(--color-text-muted)]">{v.body}</p>
             </div>
           ))}
         </div>
@@ -59,7 +59,7 @@ export default function AboutPage() {
           <h2 className="flex items-center gap-2 text-lg font-bold text-[var(--color-text)]">
             <Sparkles size={18} className="text-[var(--color-brand)]" /> Technology &amp; privacy approach
           </h2>
-          <p className="mt-2.5 text-sm leading-relaxed text-[var(--color-text-muted)]">
+          <p className="mt-2.5 text-[15px] leading-relaxed text-[var(--color-text-muted)]">
             Wherever technically possible, files are processed entirely in your browser using the Canvas API and never
             uploaded to a server. PDF compression is the one exception — it requires temporary server-side processing
             to recompress embedded images and rebuild the file efficiently, and files are discarded immediately after

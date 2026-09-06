@@ -140,8 +140,8 @@ async function encodeAndApply(pdfDoc: PDFDocument, images: ExtractedImage[], qua
 
 function stripMetadata(pdfDoc: PDFDocument) {
   try {
-    pdfDoc.setProducer("SizeSnap");
-    pdfDoc.setCreator("SizeSnap");
+    pdfDoc.setProducer("CompNivi");
+    pdfDoc.setCreator("CompNivi");
     pdfDoc.setSubject("");
     pdfDoc.setKeywords([]);
   } catch {
