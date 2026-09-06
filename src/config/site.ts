@@ -3,7 +3,7 @@ export const siteConfig = {
   tagline: "Compress Files to the Size You Need",
   description:
     "Free online tools to compress images and PDFs to a specific KB or MB size. Reduce file size while preserving the best possible quality.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://sizesnap.example.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://compress.nivishdigital.com",
   contactEmail: process.env.CONTACT_EMAIL || "thakurpratham15@gmail.com",
   ga4Id: process.env.NEXT_PUBLIC_GA_ID || "G-1MX16G6167",
   adsenseClientId: process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID || "",
