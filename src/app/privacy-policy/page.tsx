@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { LegalLayout } from "@/components/LegalLayout";
-import { siteConfig } from "@/config/site";
+import { pageMetadata, siteConfig } from "@/config/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Privacy Policy",
-  description: `How ${siteConfig.name} handles your files and data.`,
-  alternates: { canonical: "/privacy-policy" },
-};
+  description: `Read how ${siteConfig.name} processes files, handles data and protects your privacy when you use our tools.`,
+  path: "/privacy-policy",
+  keywords: ["CompNivi privacy policy", "file processing privacy", "image compression data policy"],
+});
 
 export default function PrivacyPolicyPage() {
   return (

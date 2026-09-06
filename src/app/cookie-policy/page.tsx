@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { LegalLayout } from "@/components/LegalLayout";
-import { siteConfig } from "@/config/site";
+import { pageMetadata, siteConfig } from "@/config/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Cookie Policy",
-  description: `How ${siteConfig.name} uses cookies.`,
-  alternates: { canonical: "/cookie-policy" },
-};
+  description: `Learn how ${siteConfig.name} uses cookies, analytics and advertising technologies on this website.`,
+  path: "/cookie-policy",
+  keywords: ["CompNivi cookie policy", "website cookies", "analytics cookies"],
+});
 
 export default function CookiePolicyPage() {
   return (

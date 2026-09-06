@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 export const siteConfig = {
   name: "CompNivi",
   tagline: "Compress Files to the Size You Need",
@@ -12,6 +14,40 @@ export const siteConfig = {
   maxBatchFiles: Number(process.env.NEXT_PUBLIC_MAX_BATCH_FILES || 10),
   twitterHandle: "@sizesnap",
 } as const;
+
+export function pageMetadata({
+  title,
+  description,
+  path,
+  keywords = [],
+}: {
+  title: string;
+  description: string;
+  path: string;
+  keywords?: string[];
+}): Metadata {
+  const url = `${siteConfig.url}${path}`;
+
+  return {
+    title,
+    description,
+    ...(keywords.length > 0 ? { keywords } : {}),
+    alternates: { canonical: url },
+    openGraph: {
+      type: "website",
+      siteName: siteConfig.name,
+      url,
+      title,
+      description,
+      locale: "en_US",
+    },
+    twitter: {
+      card: "summary",
+      title,
+      description,
+    },
+  };
+}
 
 export const AD_SLOTS = {
   belowHeader: process.env.NEXT_PUBLIC_ADSENSE_SLOT_BELOW_HEADER || "",

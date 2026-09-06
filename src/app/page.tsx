@@ -21,13 +21,41 @@ import { ToolCard, ToolCardTone } from "@/components/ui/ToolCard";
 import { AdPlaceholder } from "@/components/ui/AdPlaceholder";
 import { FAQ } from "@/components/ui/FAQ";
 import { HeroIllustration } from "@/components/HeroIllustration";
+import { JsonLd, faqSchema } from "@/components/structured-data/JsonLd";
 import { siteConfig, AD_SLOTS } from "@/config/site";
 import { getToolBySlug, tools } from "@/config/tools";
 
 export const metadata: Metadata = {
-  title: "Compress Images & PDFs to Exact KB or MB Size Online",
-  description: siteConfig.description,
-  alternates: { canonical: "/" },
+  title: "Free Image & PDF Compressor - Exact KB or MB Size",
+  description:
+    "Compress images and PDFs online to exact KB or MB sizes. Free image compressor, PDF compressor, resizer and converter with no sign-up.",
+  keywords: [
+    "compress image online",
+    "compress image to 20KB",
+    "compress image to 50KB",
+    "compress image to 100KB",
+    "compress PDF online",
+    "reduce image file size",
+    "resize image online",
+    "image converter",
+    "free online file compressor",
+  ],
+  alternates: { canonical: siteConfig.url },
+  openGraph: {
+    type: "website",
+    siteName: siteConfig.name,
+    url: siteConfig.url,
+    title: "Free Image & PDF Compressor - Exact KB or MB Size",
+    description:
+      "Compress images and PDFs online to exact KB or MB sizes. Free, fast and private with no sign-up required.",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary",
+    title: "Free Image & PDF Compressor - Exact KB or MB Size",
+    description:
+      "Compress images and PDFs online to exact KB or MB sizes. Free, fast and private with no sign-up required.",
+  },
 };
 
 const POPULAR_IMAGE = ["compress-image", "compress-image-to-100kb", "compress-image-to-200kb", "compress-image-to-500kb"];
@@ -94,6 +122,8 @@ function ToolRow({ title, slugs, href, tone }: { title: string; slugs: string[];
 export default function Home() {
   return (
     <div>
+      <JsonLd data={faqSchema(HOME_FAQ)} />
+
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-[var(--color-border)]">
         <div

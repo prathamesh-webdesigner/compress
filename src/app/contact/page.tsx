@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import { Clock, Mail, MessageCircle, ShieldCheck } from "lucide-react";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { ContactForm } from "@/components/ContactForm";
-import { siteConfig } from "@/config/site";
+import { pageMetadata, siteConfig } from "@/config/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Contact",
-  description: `Get in touch with the ${siteConfig.name} team.`,
-  alternates: { canonical: "/contact" },
-};
+  description: `Contact the ${siteConfig.name} team with questions, feedback or requests for new image and PDF tools.`,
+  path: "/contact",
+  keywords: ["contact CompNivi", "file tool support", "image compressor support"],
+});
 
 const POINTS = [
   { icon: MessageCircle, text: "Questions, feedback or a tool request are all welcome." },

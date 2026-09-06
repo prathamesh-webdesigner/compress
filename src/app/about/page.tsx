@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Heart, Lock, ShieldCheck, Sparkles, Target, Zap } from "lucide-react";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
-import { siteConfig } from "@/config/site";
+import { pageMetadata, siteConfig } from "@/config/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "About",
   description: `About ${siteConfig.name} — free browser-based tools for compressing and converting images and PDFs.`,
-  alternates: { canonical: "/about" },
-};
+  path: "/about",
+  keywords: ["about CompNivi", "free image tools", "free PDF tools", "private file compression"],
+});
 
 const VALUES = [
   { icon: Target, title: "Purpose-built", body: "Every tool solves one specific, common problem — like fitting a signature under 20 KB — instead of a generic all-in-one editor." },

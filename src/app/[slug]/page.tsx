@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { tools, getToolBySlug, getRelatedTools } from "@/config/tools";
 import { getCategoryMeta } from "@/config/categories";
-import { siteConfig } from "@/config/site";
+import { pageMetadata, siteConfig } from "@/config/site";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { ToolRunner } from "@/components/tools/ToolRunner";
 import { FAQ } from "@/components/ui/FAQ";
@@ -19,22 +19,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const tool = getToolBySlug(slug);
   if (!tool) return {};
-  return {
+  return pageMetadata({
     title: tool.seoTitle,
     description: tool.metaDescription,
-    alternates: { canonical: `/${tool.slug}` },
-    openGraph: {
-      title: tool.seoTitle,
-      description: tool.metaDescription,
-      url: `${siteConfig.url}/${tool.slug}`,
-      type: "website",
-    },
-    twitter: {
-      card: "summary",
-      title: tool.seoTitle,
-      description: tool.metaDescription,
-    },
-  };
+    path: `/${tool.slug}`,
+    keywords: [tool.title, `${tool.title} online`, "free online file compressor"],
+  });
 }
 
 export default async function ToolPage({ params }: { params: Promise<{ slug: string }> }) {

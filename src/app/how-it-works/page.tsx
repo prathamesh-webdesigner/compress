@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { Cpu, FileUp, MousePointerClick, ShieldCheck, SlidersHorizontal, Sparkles } from "lucide-react";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
-import { siteConfig } from "@/config/site";
+import { pageMetadata, siteConfig } from "@/config/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "How It Works",
-  description: `How ${siteConfig.name}'s compression tools work, and how your files are handled.`,
-  alternates: { canonical: "/how-it-works" },
-};
+  description: `Learn how ${siteConfig.name} compresses, resizes and converts files while protecting your privacy.`,
+  path: "/how-it-works",
+  keywords: ["how image compression works", "how PDF compression works", "private browser file processing"],
+});
 
 const STEPS = [
   { n: "01", icon: MousePointerClick, title: "Choose a tool", body: "Pick a preset target size (like 100 KB) or a custom-size tool if your limit doesn't match a preset." },

@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { LegalLayout } from "@/components/LegalLayout";
-import { siteConfig } from "@/config/site";
+import { pageMetadata, siteConfig } from "@/config/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Terms of Service",
-  description: `Terms of Service for ${siteConfig.name}.`,
-  alternates: { canonical: "/terms" },
-};
+  description: `Read the Terms of Service for using ${siteConfig.name} image compression, PDF compression and file tools.`,
+  path: "/terms",
+  keywords: ["CompNivi terms of service", "online file tools terms", "image compressor terms"],
+});
 
 export default function TermsPage() {
   return (

@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { LegalLayout } from "@/components/LegalLayout";
-import { siteConfig } from "@/config/site";
+import { pageMetadata, siteConfig } from "@/config/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Disclaimer",
-  description: `Disclaimer for ${siteConfig.name}.`,
-  alternates: { canonical: "/disclaimer" },
-};
+  description: `Important information and limitations for using ${siteConfig.name} file compression, conversion and resizing tools.`,
+  path: "/disclaimer",
+  keywords: ["CompNivi disclaimer", "file compression limitations", "passport photo tool disclaimer"],
+});
 
 export default function DisclaimerPage() {
   return (
