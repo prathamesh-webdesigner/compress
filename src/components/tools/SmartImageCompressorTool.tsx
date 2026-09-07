@@ -11,6 +11,7 @@ import { ErrorMessage } from "@/components/ui/ErrorMessage";
 import { useToast } from "@/components/ui/Toast";
 import { formatBytes, percentReduced, generateOutputFilename } from "@/lib/format";
 import { trackEvent } from "@/lib/analytics";
+import { incrementFileCount } from "@/lib/fileCounter";
 import { createZip } from "@/lib/zip";
 import { siteConfig } from "@/config/site";
 import { compressImageSmart, SmartCompressResult } from "@/lib/imageCompression";
@@ -114,6 +115,7 @@ export function SmartImageCompressorTool({ tool }: { tool: Tool }) {
           tool_slug: tool.slug,
           reduced_percent: Math.round(((item.file.size - outcome.blob.size) / item.file.size) * 100),
         });
+        incrementFileCount();
       } catch {
         setItems((prev) => prev.map((i) => (i.id === item.id ? { ...i, status: "error", error: "Compression failed for this file." } : i)));
         trackEvent("compression_failed", { tool_slug: tool.slug });

@@ -13,6 +13,7 @@ import { useImageCompressor, CompressOutcome } from "@/hooks/useImageCompressor"
 import { useToast } from "@/components/ui/Toast";
 import { toBytes, formatBytes, percentReduced, generateOutputFilename } from "@/lib/format";
 import { trackEvent } from "@/lib/analytics";
+import { incrementFileCount } from "@/lib/fileCounter";
 import { createZip } from "@/lib/zip";
 import { siteConfig } from "@/config/site";
 
@@ -158,6 +159,7 @@ export function ImageCompressorTool({ tool }: { tool: Tool }) {
           tool_slug: tool.slug,
           reduced_percent: Math.round(((item.file.size - outcome.blob.size) / item.file.size) * 100),
         });
+        incrementFileCount();
         if (!outcome.metTarget) {
           push("info", `${item.file.name}: your requested size was very tight — we got as close as possible.`);
         }

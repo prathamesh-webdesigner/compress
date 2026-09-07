@@ -10,6 +10,7 @@ import { ErrorMessage } from "@/components/ui/ErrorMessage";
 import { resizeImage } from "@/lib/imageTransform";
 import { generateOutputFilename } from "@/lib/format";
 import { trackEvent } from "@/lib/analytics";
+import { incrementFileCount } from "@/lib/fileCounter";
 
 export function ImageResizerTool({ tool }: { tool: Tool }) {
   const [file, setFile] = useState<File | null>(null);
@@ -92,6 +93,7 @@ export function ImageResizerTool({ tool }: { tool: Tool }) {
       setResult({ blob: out.blob, width: out.width, height: out.height, mime: out.mimeType });
       setResultUrl(track(URL.createObjectURL(out.blob)));
       trackEvent("compression_completed", { tool_slug: tool.slug });
+      incrementFileCount();
     } catch {
       setError("Something went wrong while resizing your file. Please try another image.");
       trackEvent("compression_failed", { tool_slug: tool.slug });

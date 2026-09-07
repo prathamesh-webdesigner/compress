@@ -20,6 +20,7 @@ import { SearchBox } from "@/components/ui/SearchBox";
 import { ToolCard, ToolCardTone } from "@/components/ui/ToolCard";
 import { AdPlaceholder } from "@/components/ui/AdPlaceholder";
 import { FAQ } from "@/components/ui/FAQ";
+import { FileCountStat } from "@/components/ui/FileCountStat";
 import { HeroIllustration } from "@/components/HeroIllustration";
 import { JsonLd, faqSchema } from "@/components/structured-data/JsonLd";
 import { siteConfig, AD_SLOTS } from "@/config/site";
@@ -90,7 +91,7 @@ const HOME_FAQ = [
 const STATS = [
   { label: "Free tools", value: `${tools.length}+` },
   { label: "Files per batch", value: `${siteConfig.maxBatchFiles}` },
-  { label: "Uploaded to servers", value: "0 images" },
+  { label: "Total files created", value: null },
   { label: "Account required", value: "None" },
 ];
 
@@ -180,7 +181,9 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-4 py-8 sm:px-6 md:grid-cols-4">
           {STATS.map((stat) => (
             <div key={stat.label} className="text-center">
-              <p className="text-2xl font-bold text-[var(--color-brand)] sm:text-3xl">{stat.value}</p>
+              <p className="text-2xl font-bold text-[var(--color-brand)] sm:text-3xl">
+                {stat.value ?? <FileCountStat />}
+              </p>
               <p className="mt-1 text-xs text-[var(--color-text-subtle)] sm:text-sm">{stat.label}</p>
             </div>
           ))}

@@ -11,6 +11,7 @@ import { ErrorMessage } from "@/components/ui/ErrorMessage";
 import { imagesToPdf, toEmbeddableImageBytes } from "@/lib/imageToPdf";
 import { formatBytes } from "@/lib/format";
 import { trackEvent } from "@/lib/analytics";
+import { incrementFileCount } from "@/lib/fileCounter";
 import { siteConfig } from "@/config/site";
 import { useToast } from "@/components/ui/Toast";
 
@@ -93,6 +94,7 @@ export function ImageToPdfTool({ tool }: { tool: Tool }) {
       setResultBlob(blob);
       setResultUrl(track(URL.createObjectURL(blob)));
       trackEvent("compression_completed", { tool_slug: tool.slug });
+      incrementFileCount();
     } catch {
       setError("Something went wrong while building your PDF. Please check your images and try again.");
       trackEvent("compression_failed", { tool_slug: tool.slug });

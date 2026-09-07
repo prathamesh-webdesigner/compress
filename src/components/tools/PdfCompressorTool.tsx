@@ -12,6 +12,7 @@ import { ErrorMessage } from "@/components/ui/ErrorMessage";
 import { useToast } from "@/components/ui/Toast";
 import { toBytes, formatBytes, percentReduced, generateOutputFilename } from "@/lib/format";
 import { trackEvent } from "@/lib/analytics";
+import { incrementFileCount } from "@/lib/fileCounter";
 import { createZip } from "@/lib/zip";
 import { siteConfig } from "@/config/site";
 
@@ -127,6 +128,7 @@ export function PdfCompressorTool({ tool }: { tool: Tool }) {
           tool_slug: tool.slug,
           reduced_percent: Math.round(((item.file.size - blob.size) / item.file.size) * 100),
         });
+        incrementFileCount();
       } catch (err) {
         const message = err instanceof Error ? err.message : "Compression failed for this file.";
         setItems((prev) => prev.map((i) => (i.id === item.id ? { ...i, status: "error", error: message } : i)));

@@ -10,6 +10,7 @@ import { ErrorMessage } from "@/components/ui/ErrorMessage";
 import { convertImageFormat } from "@/lib/imageTransform";
 import { generateOutputFilename } from "@/lib/format";
 import { trackEvent } from "@/lib/analytics";
+import { incrementFileCount } from "@/lib/fileCounter";
 
 const MIME_FOR_FORMAT: Record<string, string> = {
   jpeg: "image/jpeg",
@@ -72,6 +73,7 @@ export function ImageConverterTool({ tool }: { tool: Tool }) {
       setResult(out.blob);
       setResultUrl(track(URL.createObjectURL(out.blob)));
       trackEvent("compression_completed", { tool_slug: tool.slug });
+      incrementFileCount();
     } catch {
       setError("Something went wrong while converting your file. Please try another image.");
       trackEvent("compression_failed", { tool_slug: tool.slug });

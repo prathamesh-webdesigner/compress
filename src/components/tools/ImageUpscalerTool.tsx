@@ -9,6 +9,7 @@ import { ProgressState } from "@/components/ui/ProgressState";
 import { ErrorMessage } from "@/components/ui/ErrorMessage";
 import { formatBytes } from "@/lib/format";
 import { trackEvent } from "@/lib/analytics";
+import { incrementFileCount } from "@/lib/fileCounter";
 import { upscaleImage, UpscaleResult } from "@/lib/imageCompression";
 
 export function ImageUpscalerTool({ tool }: { tool: Tool }) {
@@ -92,6 +93,7 @@ export function ImageUpscalerTool({ tool }: { tool: Tool }) {
       setResult(outcome);
       setResultUrl(track(URL.createObjectURL(outcome.blob)));
       trackEvent("compression_completed", { tool_slug: tool.slug });
+      incrementFileCount();
     } catch {
       setError("Upscaling failed for this image. Try a smaller file or a different format.");
       trackEvent("compression_failed", { tool_slug: tool.slug });
