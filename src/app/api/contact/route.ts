@@ -42,6 +42,7 @@ export async function POST(req: NextRequest) {
           subject: `[${siteConfig.name} Contact] ${subject}`,
           name,
           email,
+          replyto: email,
           message: `Subject: ${subject}\n\n${message}`,
         }),
       });
@@ -57,6 +58,7 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ error: "We couldn't send your message right now. Please try again shortly." }, { status: 502 });
       }
     } else if (resendApiKey) {
+      const resendFromEmail = process.env.RESEND_FROM_EMAIL || siteConfig.contactEmail;
       const res = await fetch("https://api.resend.com/emails", {
         method: "POST",
         headers: {
@@ -64,7 +66,7 @@ export async function POST(req: NextRequest) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: `${siteConfig.name} Contact Form <onboarding@resend.dev>`,
+          from: `${siteConfig.name} Contact Form <${resendFromEmail}>`,
           to: siteConfig.contactEmail,
           reply_to: email,
           subject: `[Contact] ${subject}`,

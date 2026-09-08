@@ -49,6 +49,7 @@ See `.env.example` for the full list with comments. Summary:
 | `CONTACT_EMAIL` | server | Destination address shown/used for the contact form |
 | `WEB3FORMS_ACCESS_KEY` | server | Delivers `/api/contact` submissions by email via Web3Forms (see below) |
 | `RESEND_API_KEY` | server | Alternative provider — used only if `WEB3FORMS_ACCESS_KEY` is unset |
+| `RESEND_FROM_EMAIL` | server | Verified sender address used by Resend, for example `info@nivishdigital.com` |
 | `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` | server | Shared counter storage for total files created |
 
 **Never** put secrets in a `NEXT_PUBLIC_*` variable — anything with that prefix is bundled into client-side JavaScript.
@@ -60,7 +61,7 @@ The total files created counter is shared across all devices through Upstash Red
 `/api/contact` sends real email via [Web3Forms](https://web3forms.com) when `WEB3FORMS_ACCESS_KEY` is configured in your hosting provider. To configure delivery, either:
 
 - Get your own free Web3Forms access key (instant, no signup — just enter an email at web3forms.com) and set `WEB3FORMS_ACCESS_KEY`, or
-- Set `RESEND_API_KEY` instead (used only when `WEB3FORMS_ACCESS_KEY` is not set) and update `CONTACT_EMAIL` to the destination address.
+- Set `RESEND_API_KEY` instead (used only when `WEB3FORMS_ACCESS_KEY` is not set), set `RESEND_FROM_EMAIL` to a verified sender on your domain, and set `CONTACT_EMAIL=info@nivishdigital.com`.
 
 If neither is configured, submissions are logged server-side instead of emailed, so nothing is silently lost.
 
