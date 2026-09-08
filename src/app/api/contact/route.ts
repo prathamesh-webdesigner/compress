@@ -49,7 +49,7 @@ export async function POST(req: NextRequest) {
       from: `${siteConfig.name} Contact Form <${smtpUser}>`,
       to: siteConfig.contactEmail,
       replyTo: email,
-      subject: `[Contact] ${subject}`,
+      subject: `[CompNivi] ${subject}`,
       text: `From: ${name} <${email}>\n\n${message}`,
     });
 
