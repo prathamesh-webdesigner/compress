@@ -54,8 +54,9 @@ export async function POST(req: NextRequest) {
         result = null;
       }
       if (!res.ok || !result?.success) {
-        console.error("Contact email failed to send via Web3Forms:", result?.message || rawBody || `HTTP ${res.status}`);
-        return NextResponse.json({ error: "We couldn't send your message right now. Please try again shortly." }, { status: 502 });
+        const providerMessage = result?.message || `HTTP ${res.status}`;
+        console.error("Contact email failed to send via Web3Forms:", providerMessage, rawBody);
+        return NextResponse.json({ error: `Email provider error: ${providerMessage}` }, { status: 502 });
       }
     } else if (resendApiKey) {
       const resendFromEmail = process.env.RESEND_FROM_EMAIL || siteConfig.contactEmail;
@@ -74,8 +75,9 @@ export async function POST(req: NextRequest) {
         }),
       });
       if (!res.ok) {
-        console.error("Contact email failed to send via Resend:", await res.text());
-        return NextResponse.json({ error: "We couldn't send your message right now. Please try again shortly." }, { status: 502 });
+        const providerMessage = await res.text();
+        console.error("Contact email failed to send via Resend:", providerMessage);
+        return NextResponse.json({ error: `Email provider error: ${providerMessage || `HTTP ${res.status}`}` }, { status: 502 });
       }
     } else {
       console.error("Contact email is not configured. Set WEB3FORMS_ACCESS_KEY or RESEND_API_KEY.");
