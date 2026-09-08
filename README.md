@@ -49,8 +49,11 @@ See `.env.example` for the full list with comments. Summary:
 | `CONTACT_EMAIL` | server | Destination address shown/used for the contact form |
 | `WEB3FORMS_ACCESS_KEY` | server | Delivers `/api/contact` submissions by email via Web3Forms (see below) |
 | `RESEND_API_KEY` | server | Alternative provider — used only if `WEB3FORMS_ACCESS_KEY` is unset |
+| `UPSTASH_REDIS_REST_URL` / `UPSTASH_REDIS_REST_TOKEN` | server | Shared counter storage for total files created |
 
 **Never** put secrets in a `NEXT_PUBLIC_*` variable — anything with that prefix is bundled into client-side JavaScript.
+
+The total files created counter is shared across all devices through Upstash Redis. Create a Redis database in Upstash and add its REST URL and token as `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` in the deployment environment.
 
 ### Contact form email delivery
 

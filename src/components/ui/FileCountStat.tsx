@@ -7,14 +7,14 @@ export function FileCountStat() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    const updateCount = () => setCount(getFileCount());
+    const updateCount = () => {
+      void getFileCount().then(setCount);
+    };
     updateCount();
     window.addEventListener(FILE_COUNT_UPDATED_EVENT, updateCount);
-    window.addEventListener("storage", updateCount);
 
     return () => {
       window.removeEventListener(FILE_COUNT_UPDATED_EVENT, updateCount);
-      window.removeEventListener("storage", updateCount);
     };
   }, []);
 
