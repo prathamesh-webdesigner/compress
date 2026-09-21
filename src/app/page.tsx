@@ -63,6 +63,12 @@ const POPULAR_PDF = ["compress-pdf-to-100kb", "compress-pdf-to-500kb", "compress
 const CONVERSION = ["jpg-to-png", "png-to-jpg", "webp-to-jpg", "image-to-pdf"];
 const APPLICATION = ["passport-photo-resizer", "signature-resizer", "compress-signature-to-20kb"];
 const ENHANCE = ["image-upscaler-4k", "image-resizer", "resize-image-to-custom-dimensions"];
+const TOOL_CARD_BACKGROUND_IMAGES: Record<string, string> = {
+  "compress-image": "/compress.webp",
+  "compress-image-to-100kb": "/100-KB.webp",
+  "compress-image-to-200kb": "/200-KB.webp",
+  "compress-image-to-500kb": "/500-KB.webp",
+};
 
 const HOME_FAQ = [
   {
@@ -112,7 +118,13 @@ function ToolRow({ title, slugs, href, tone }: { title: string; slugs: string[];
       </div>
       <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {items.map((t) => (
-          <ToolCard key={t.slug} href={`/${t.slug}`} title={t.navLabel} tone={tone} />
+          <ToolCard
+            key={t.slug}
+            href={`/${t.slug}`}
+            title={t.navLabel}
+            tone={tone}
+            backgroundImage={TOOL_CARD_BACKGROUND_IMAGES[t.slug]}
+          />
         ))}
       </div>
     </div>

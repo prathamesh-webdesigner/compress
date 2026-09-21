@@ -18,6 +18,7 @@ export function ToolCard({
   icon: Icon = Sparkles,
   tone = "blue",
   badge,
+  backgroundImage,
 }: {
   href: string;
   title: string;
@@ -25,45 +26,41 @@ export function ToolCard({
   icon?: LucideIcon;
   tone?: ToolCardTone;
   badge?: string;
+  backgroundImage?: string;
 }) {
   const toneStyle = TONE_STYLES[tone];
   return (
     <Link
       href={href}
-      className="card group relative flex flex-col gap-3 overflow-hidden p-5 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg focus-ring"
+      className="card group relative flex flex-col overflow-hidden p-0 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg focus-ring"
     >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100"
-        style={{ background: toneStyle.fg }}
-      />
-      <div className="relative flex items-start justify-between gap-3">
-        <span
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl shadow-sm transition-transform duration-200 group-hover:scale-110 group-hover:-rotate-3"
-          style={{ background: toneStyle.bg, color: toneStyle.fg, boxShadow: `0 0 0 1px ${toneStyle.ring}` }}
-        >
-          <Icon size={19} />
-        </span>
-        {badge && (
-          <span
-            className="rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide"
-            style={{ background: toneStyle.bg, color: toneStyle.fg }}
-          >
-            {badge}
-          </span>
+      <div className="relative h-40 overflow-hidden rounded-t-[26px] bg-[var(--color-surface-muted)]">
+        {backgroundImage ? (
+          <div
+            aria-hidden
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-[1.04]"
+            style={{ backgroundImage: `url(${backgroundImage})` }}
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center" style={{ background: toneStyle.bg }}>
+            <Icon size={28} style={{ color: toneStyle.fg }} />
+          </div>
         )}
       </div>
-      <div className="relative">
-        <span className="flex items-center gap-1.5 font-semibold text-[var(--color-text)]">
-          {title}
-          <ArrowRight
-            size={15}
-            className="shrink-0 text-[var(--color-text-subtle)] opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100"
-            style={{ color: toneStyle.fg }}
-          />
-        </span>
-        {description && <p className="mt-1.5 text-[15px] leading-relaxed text-[var(--color-text-muted)]">{description}</p>}
+
+      <div className="relative flex flex-col items-center justify-center px-4 py-2 text-center">
+        <span className="text-[20px] font-bold leading-tight text-[var(--color-text)] sm:text-[20px]">{title}</span>
+        {description && <p className="mt-1 text-[15px] leading-relaxed text-[var(--color-text-muted)]">{description}</p>}
       </div>
+
+      {badge && (
+        <span
+          className="absolute right-3 top-3 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide"
+          style={{ background: toneStyle.bg, color: toneStyle.fg }}
+        >
+          {badge}
+        </span>
+      )}
     </Link>
   );
 }
