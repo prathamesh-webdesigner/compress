@@ -68,6 +68,9 @@ const TOOL_CARD_BACKGROUND_IMAGES: Record<string, string> = {
   "compress-image-to-100kb": "/100-KB.webp",
   "compress-image-to-200kb": "/200-KB.webp",
   "compress-image-to-500kb": "/500-KB.webp",
+  "compress-pdf-to-100kb": "/pdf-100-KB.png",
+  "compress-pdf-to-500kb": "/pdf-500-KB.png",
+  "compress-pdf-to-1mb": "/pdf-1-mb.png",
 };
 
 const HOME_FAQ = [
