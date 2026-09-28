@@ -10,7 +10,7 @@ import { ErrorMessage } from "@/components/ui/ErrorMessage";
 import { formatBytes } from "@/lib/format";
 import { trackEvent } from "@/lib/analytics";
 import { incrementFileCount } from "@/lib/fileCounter";
-import { upscaleImage, UpscaleResult } from "@/lib/imageCompression";
+import { upscaleImage, UpscaleResult, UpscaleTooLargeError } from "@/lib/imageCompression";
 
 export function ImageUpscalerTool({ tool }: { tool: Tool }) {
   const [file, setFile] = useState<File | null>(null);
@@ -79,23 +79,18 @@ export function ImageUpscalerTool({ tool }: { tool: Tool }) {
         scale,
         outputFormat: "keep",
         originalMime: file.type,
-        onProgress: (s) =>
-          setStageLabel(
-            s === "analyzing"
-              ? "Analyzing image..."
-              : s === "searching"
-                ? "Planning upscale steps..."
-                : s === "optimizing"
-                  ? "Resampling and sharpening..."
-                  : "Finalizing..."
-          ),
+        onStatus: (message) => setStageLabel(message),
       });
       setResult(outcome);
       setResultUrl(track(URL.createObjectURL(outcome.blob)));
       trackEvent("compression_completed", { tool_slug: tool.slug });
       incrementFileCount();
-    } catch {
-      setError("Upscaling failed for this image. Try a smaller file or a different format.");
+    } catch (err) {
+      setError(
+        err instanceof UpscaleTooLargeError
+          ? err.message
+          : "Upscaling failed for this image. Try a smaller file or a different format."
+      );
       trackEvent("compression_failed", { tool_slug: tool.slug });
     } finally {
       setIsRunning(false);
@@ -103,21 +98,24 @@ export function ImageUpscalerTool({ tool }: { tool: Tool }) {
     }
   }
 
-  const targetLabel =
-    scale === "4k"
-      ? "up to 3840×2160 (4K, longer edge)"
-      : dimensions
-        ? `${dimensions.width * 2}×${dimensions.height * 2}`
-        : "2x";
+  const targetLabel = (() => {
+    if (!dimensions) return scale === "4k" ? "4K (3840px longer edge)" : "2x";
+    if (scale === "4k") {
+      const factor = Math.max(1, 3840 / Math.max(dimensions.width, dimensions.height));
+      return `${Math.round(dimensions.width * factor)}×${Math.round(dimensions.height * factor)}`;
+    }
+    return `${dimensions.width * 2}×${dimensions.height * 2}`;
+  })();
 
   return (
     <div className="space-y-4">
       <div className="flex items-start gap-2.5 rounded-xl bg-[var(--color-brand-soft)] p-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
         <Info size={16} className="mt-0.5 shrink-0 text-[var(--color-brand)]" />
         <p>
-          This upscaler uses multi-step high-quality resampling plus edge sharpening — a genuine, well-tuned classical
-          algorithm. It is <strong>not</strong> a generative AI model: it sharpens and enlarges existing detail, it
-          does not invent new detail. Results are best on images that are only moderately low-resolution.
+          This upscaler uses an on-device AI super-resolution model (ESRGAN) to rebuild sharp edges and fine detail,
+          after first reconstructing pixelated blocks. The first run downloads a small (~3 MB) model. Very small or
+          heavily blurred images can only be improved so far: the AI predicts plausible detail, it cannot recover
+          what was never captured. Best results come from images of roughly 500–1200px.
         </p>
       </div>
 
@@ -156,7 +154,7 @@ export function ImageUpscalerTool({ tool }: { tool: Tool }) {
                 }`}
               >
                 <span className="block font-semibold text-[var(--color-text)]">4K Enhance</span>
-                <span className="block text-xs text-[var(--color-text-subtle)]">Scale toward 3840×2160</span>
+                <span className="block text-xs text-[var(--color-text-subtle)]">Longer edge to 3840px</span>
               </button>
             </div>
           </div>
@@ -191,6 +189,13 @@ export function ImageUpscalerTool({ tool }: { tool: Tool }) {
               </div>
             </div>
           </div>
+          <p className="mt-4 rounded-lg bg-[var(--color-brand-soft)] p-3 text-xs leading-relaxed text-[var(--color-text-muted)]">
+            {result.aiUsed
+              ? "Enhanced with AI super-resolution. "
+              : `AI enhancement was not used${result.aiNote ? ` (${result.aiNote})` : ""}; standard high-quality upscaling was applied instead. `}
+            {result.pixelBlockSize && `Pixelation detected (${result.pixelBlockSize}px blocks) and reconstructed. `}
+            {result.denoised && "Heavy noise was reduced first."}
+          </p>
           <dl className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3">
             <div>
               <dt className="text-xs text-[var(--color-text-subtle)]">Original resolution</dt>
