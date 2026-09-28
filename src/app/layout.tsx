@@ -37,6 +37,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-full flex flex-col">
         <JsonLd data={webApplicationSchema(siteConfig.url, siteConfig.name)} />
 
+        <Script id="clarity-init" strategy="beforeInteractive">
+          {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "yp9tyhoyag");`}
+        </Script>
+
         {siteConfig.ga4Id && (
           <>
             <Script src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.ga4Id}`} strategy="afterInteractive" />
