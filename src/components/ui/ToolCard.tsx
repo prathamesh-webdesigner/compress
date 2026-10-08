@@ -38,7 +38,7 @@ export function ToolCard({
         {backgroundImage ? (
           <div
             aria-hidden
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-[1.04]"
+            className="absolute inset-0 bg-contain bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${backgroundImage})` }}
           />
         ) : (

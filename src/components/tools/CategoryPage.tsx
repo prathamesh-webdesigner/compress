@@ -45,6 +45,19 @@ const STATS = [
   { icon: ShieldCheck, label: "Files auto-deleted", value: "Server tools" },
 ];
 
+const IMAGE_TOOL_CARD_BACKGROUND_IMAGES: Record<string, string> = {
+  "compress-image": "/compress.webp",
+  "compress-image-to-100kb": "/100-KB.webp",
+  "compress-image-to-200kb": "/200-KB.webp",
+  "compress-image-to-500kb": "/500-KB.webp",
+};
+
+const PDF_TOOL_CARD_BACKGROUND_IMAGES: Record<string, string> = {
+  "compress-pdf-to-100kb": "/pdf-100-KB.png",
+  "compress-pdf-to-500kb": "/pdf-500-KB.png",
+  "compress-pdf-to-1mb": "/pdf-1-mb.png",
+};
+
 export function CategoryPage({
   title,
   intro,
@@ -87,7 +100,13 @@ export function CategoryPage({
         <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {tools.map((t) => {
             const { icon, tone } = iconAndToneFor(t);
-            return <ToolCard key={t.slug} href={`/${t.slug}`} title={t.title} description={t.metaDescription} icon={icon} tone={tone} />;
+            const backgroundImage =
+              t.category === "image-compress"
+                ? IMAGE_TOOL_CARD_BACKGROUND_IMAGES[t.slug] || "/compress.webp"
+                : t.category === "pdf-compress"
+                  ? PDF_TOOL_CARD_BACKGROUND_IMAGES[t.slug] || "/pdf-100-KB.png"
+                  : undefined;
+            return <ToolCard key={t.slug} href={`/${t.slug}`} title={t.title} description={t.metaDescription} icon={icon} tone={tone} backgroundImage={backgroundImage} />;
           })}
         </div>
 
