@@ -19,17 +19,14 @@ const STATIC_PATHS = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
   const staticEntries: MetadataRoute.Sitemap = STATIC_PATHS.map((path) => ({
     url: `${siteConfig.url}${path}`,
-    lastModified: now,
     changeFrequency: path === "" ? "daily" : "weekly",
     priority: path === "" ? 1 : 0.7,
   }));
 
   const toolEntries: MetadataRoute.Sitemap = tools.map((tool) => ({
     url: `${siteConfig.url}/${tool.slug}`,
-    lastModified: now,
     changeFrequency: "weekly",
     priority: 0.9,
   }));
