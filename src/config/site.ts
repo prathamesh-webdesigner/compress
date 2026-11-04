@@ -30,7 +30,7 @@ export function pageMetadata({
 
   return {
     title,
-    description,
+    description, 
     ...(keywords.length > 0 ? { keywords } : {}),
     alternates: { canonical: url },
     openGraph: {
