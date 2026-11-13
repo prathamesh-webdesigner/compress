@@ -46,6 +46,18 @@ export function Footer() {
             <p className="mt-3 text-sm text-[var(--color-text-muted)] max-w-xs">
               Free browser-based tools to compress and convert images and PDFs to the exact size you need.
             </p>
+            <p className="mt-3 max-w-xs text-sm text-[var(--color-text-muted)]">
+              Need to review page titles, headings, image alt text, and links? Try our{" "}
+              <a
+                href="https://metadata.nivishdigital.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-[var(--color-brand)] hover:underline"
+              >
+                free on-page SEO analyzer
+              </a>
+              .
+            </p>
           </div>
           {COLUMNS.map((col) => (
             <div key={col.title}>
